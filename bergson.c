@@ -24,7 +24,7 @@
 volatile unsigned long bm_limit = 0, bm_remain = 0;
 volatile unsigned char bm_player = 0, bm_debug = 1;
 volatile unsigned long bm_max_matches = 50, bm_first_step = 2;
-volatile unsigned long bm_fibsz = 0;
+volatile unsigned long bm_fibsz = 0, bm_recursion = 0;
 unsigned long *bm_fibonacci = NULL, *bm_fibtmp;
 
 void echo_matches( void );
@@ -153,10 +153,21 @@ unsigned long ai_decide( unsigned long ai_remain, unsigned long ai_limit ) {
 	bm_fav = ai_remain - bm_fibonacci[bm_n];
 	bm_m = ( int ) trunc( ( bm_fibonacci[bm_n] / 2 ) - 0.5 );
 	if ( bm_fav <= ai_limit && bm_fav <= bm_m ) {
-		if ( bm_debug ) printf( "Favorable outcome found...\n" );
+		if ( bm_debug ) printf( "Favorable outcome found in one step\n" );
 		return ( bm_fav );
 	}
 	/* 4. Recursively search for further favorables */
+	if ( bm_debug ) {
+		bm_recursion ++;
+		printf( "Recursion depth = %lu\n", bm_recursion );
+	}
+	bm_m = bm_min(ai_limit, ( int ) trunc( ( ai_remain - 1 ) / 3 ) );
+	for ( bm_fav = 1; bm_fav <= bm_m; bm_fav ++ ) {
+		if ( ai_decide( ai_remain - bm_fav, bm_fav * 2 ) == 0 ) {
+			if ( bm_debug ) printf( "Favorable outcome found recursively\n" );
+			return ( bm_fav );
+		}
+	}
 
 	return ( 0 );
 }
@@ -228,6 +239,7 @@ void pvp_loop( unsigned char forever ) {
 
 void pve_loop( unsigned char forever ) {
 	do {
+		bm_recursion = 0;
 		bm_player = 0;
 		bm_remain = bm_max_matches;
 		while ( bm_remain > 0 ) {
