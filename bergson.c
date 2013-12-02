@@ -3,12 +3,8 @@
 #include <time.h>
 #include <math.h>
 
-#define	BM_MAX_MATCHES		50
-#define	BM_FIRST_STEP		2UL
 #define	bm_min( arg1, arg2 )	( arg1 < arg2 ) ? arg1 : arg2
-#define	bm_max( arg1, arg2 )	( arg1 > arg2 ) ? arg1 : arg2
 #define	bm_binet( arg1 )		( int ) round( pow( 1 + pow( 5, 0.5), arg1 ) / pow( 5, 0.5) )
-#define	bm_debug			1
 
 /* I18n strings */
 #define	STR_ERR_PLAYER		"\nError: wrong player in turn!\n"
@@ -26,7 +22,8 @@
 #define	STR_UNLIMITED		"unlimited\n"
 
 volatile unsigned long bm_limit = 0, bm_remain = 0;
-volatile unsigned char bm_player = 0;
+volatile unsigned char bm_player = 0, bm_debug = 1;
+volatile unsigned long bm_max_matches = 50, bm_first_step = 2;
 volatile unsigned long bm_fibsz = 0;
 unsigned long *bm_fibonacci = NULL, *bm_fibtmp;
 
@@ -52,7 +49,7 @@ int main( void ) {
 		printf( "> " );
 		//scanf( "%c",&keypress );
 		keypress = ( unsigned char ) player_input();
-		bm_limit = BM_FIRST_STEP;
+		bm_limit = bm_first_step;
 		
 
 		do {
@@ -69,7 +66,7 @@ int main( void ) {
 			bm_fibonacci[bm_fibsz] = bm_binet(bm_fibsz);
 			if ( bm_debug ) printf( "%lu\n", bm_fibonacci[bm_fibsz] );
 			bm_fibsz ++;
-		} while (bm_fibonacci[bm_fibsz] <= BM_MAX_MATCHES );
+		} while (bm_fibonacci[bm_fibsz] <= bm_max_matches );
 
 		switch ( keypress ) {
 			case 1: pve_loop( 0 ); break;
@@ -87,7 +84,7 @@ void echo_matches( void ) {
 	unsigned long i = 0;
 	printf( STR_MATCHES, bm_remain );
 	/* Error handling condition for unsigned (if any) */
-	if ( bm_remain > BM_MAX_MATCHES ) {
+	if ( bm_remain > bm_max_matches ) {
 		printf( STR_ERR_OTHER );
 		return;
 	}
@@ -147,6 +144,7 @@ unsigned long ai_decide( unsigned long ai_remain, unsigned long ai_limit ) {
 	while( bm_fibonacci[bm_n] <= ai_remain &&
 			bm_fibonacci[bm_n + 1] < ai_remain &&
 			bm_n < bm_fibsz );
+	if ( ai_remain == bm_fibonacci[bm_n] ) return ( 0 );
 
 	return ( 0 );
 }
@@ -203,7 +201,7 @@ unsigned char player_pickup( unsigned char num ) {
 void pvp_loop( unsigned char forever ) {
 	do {
 		bm_player = 1;
-		bm_remain = BM_MAX_MATCHES;
+		bm_remain = bm_max_matches;
 		while ( bm_remain > 0 ) {
 			echo_matches();
 			//echo_player_take( bm_player );
@@ -219,7 +217,7 @@ void pvp_loop( unsigned char forever ) {
 void pve_loop( unsigned char forever ) {
 	do {
 		bm_player = 0;
-		bm_remain = BM_MAX_MATCHES;
+		bm_remain = bm_max_matches;
 		while ( bm_remain > 0 ) {
 			echo_matches();
 			//echo_player_take( bm_player );
