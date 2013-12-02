@@ -139,6 +139,14 @@ void ai_pickup( void ) {
 
 /* Recursive function of AI choice */
 unsigned long ai_decide( unsigned long ai_remain, unsigned long ai_limit ) {
+	unsigned long bm_n = 0, bm_m = 0, bm_fav = 0;
+	/* 1. Check possibility to take all at once */
+	if ( ai_remain <= ai_limit ) return ( ai_remain );
+	/* 2. Look for Fibonacci number less than remains */
+	do bm_n ++;
+	while( bm_fibonacci[bm_n] <= ai_remain &&
+			bm_fibonacci[bm_n + 1] < ai_remain &&
+			bm_n < bm_fibsz );
 
 	return ( 0 );
 }
