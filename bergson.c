@@ -156,7 +156,7 @@ unsigned long ai_decide( unsigned long ai_remain, unsigned long ai_limit ) {
 		if ( bm_debug ) printf( "Favorable outcome found...\n" );
 		return ( bm_fav );
 	}
-	/* 4. Recursively search  */
+	/* 4. Recursively search for further favorables */
 
 	return ( 0 );
 }
