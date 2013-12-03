@@ -8,51 +8,51 @@
 #define bm_rndcomput( arg1 )	round ( pow( ( 1 + pow( 5, 0.5 ) ) / 2, arg1 ) / pow( 5, 0.5) )
 
 /* I18n strings */
-#define STR_ERR_WRPL	"\nError: wrong player in turn!\n"
-#define STR_ERR_UNKN	"\nError: unhandled error...\n"
-#define STR_ERR_INUM	"\nError: wrong number.\nPlease, enter positive number ('0', 'exit' to end)\n"
-#define STR_ERR_MALL	"Error: memory allocation\n"
+#define STR_ERR_WRPL	"\nОшибка: ошибка расчёта следующего хода!\n"
+#define STR_ERR_UNKN	"\nОшибка: неизвестная ошибка...\n"
+#define STR_ERR_INUM	"\nОшибка: неверное число.\nНужно ввести целое число ('0', 'exit' для завершения)\n"
+#define STR_ERR_MALL	"\nОшибка: ошибка выделения памяти\n"
 
-#define STR_ACT_PL0T	"\nThis is your turn. Pick matches. Maximum: "
-#define STR_ACT_PL1T	"\n-= Player 1 =- can take. Maximum: "
-#define STR_ACT_PL2T	"\n.::Player 2::. can take. Maximum: "
-#define STR_ACT_AITN	"\nNow, it is my turn. I will take. Maximum: "
-#define STR_ACT_AIPK	"I pick up %lu\n"
-#define STR_RES_WINR	"\nWinner! Player %i\n"
-#define STR_RES_PWIN	"\nYOU have WON! But this time.\nGo another try!\n"
-#define STR_RES_AWIN	"\nAha! I have WON!\nYou can not defeat Artificial Intelligence\n"
-#define STR_INF_MTCH	"\n\nMatches remain: %lu\n"
-#define STR_INF_ENDL	"unlimited\n"
+#define STR_ACT_PL0T	"\nТвой ход. Тяни спички. Можно взять: "
+#define STR_ACT_PL1T	"\n-= Игрок 1 =- тянет спички. Можно взять: "
+#define STR_ACT_PL2T	"\n.::Игрок 2::. тянет спички. Можно взять: "
+#define STR_ACT_AITN	"\nТеперь мой ход. Я тяну спички. Я могу взять: "
+#define STR_ACT_AIPK	"Я взял %lu спичек\n"
+#define STR_RES_WINR	"\nПобедитель! Игрок %u победил\n"
+#define STR_RES_PWIN	"\nТВОЯ ВЗЯЛА! Тебе просто повезло.\nДавай ещё разок!\n"
+#define STR_RES_AWIN	"\nХа! Я ВЫИГРАЛ!\nБесполезно пытаться победить машину!\n"
+#define STR_INF_MTCH	"\n\nОсталось спичек: %lu\n"
+#define STR_INF_ENDL	"неограничено\n"
 #define STR_INF_ETRL	"%lu\n> "
 
-#define STR_OMN_EXIT	"0 - exit (type '0' or 'exit')\n> "
-#define STR_MMN_TITL	"\n\n    .::Main menu::.\n"
-#define STR_MMN_PVE0	"1 - player vs ai\n"
-#define STR_MMN_PVP0	"2 - player vs player\n"
-#define STR_MMN_PVE1	"3 - player vs ai (permanent)\n"
-#define STR_MMN_PVP1	"4 - player vs player (permanent)\n"
-#define STR_MMN_CFGM	"5 - configuration\n"
-#define STR_CMN_TITL	"\n\n    .::Configuration menu::.\n"
-#define STR_CMN_MAXM	"1 - max matches = %lu (default = 50)\n"
-#define STR_CMN_FSTS	"2 - first step = %lu (default = 2)\n"
-#define STR_CMN_FSTT	"3 - first turn = %u (0 - ai, 1 - player, default = 0)\n"
-#define STR_CMN_DLVL	"4 - debug level = %u (0 - off, 1..3 - on, default = 0)\n"
-#define STR_CMN_RSET	"5 - reset to defaults\n"
-#define STR_CMN_CFGI	"Enter new value (0 or exit - cancel):\n> "
-#define STR_CMN_CFGR	"All values have been set to its' default values\n"
+#define STR_OMN_EXIT	"0 - выход (type '0' or 'exit')\n> "
+#define STR_MMN_TITL	"\n\n    .::Главное меню::.\n"
+#define STR_MMN_PVE0	"1 - игрок против машины\n"
+#define STR_MMN_PVP0	"2 - игрок против игрока\n"
+#define STR_MMN_PVE1	"3 - игрок против машины (в цикле)\n"
+#define STR_MMN_PVP1	"4 - игрок против игрока (в цикле)\n"
+#define STR_MMN_CFGM	"5 - настройки\n"
+#define STR_CMN_TITL	"\n\n    .::Меню настроек::.\n"
+#define STR_CMN_MAXM	"1 - максимум спичек = %lu (исходно = 50)\n"
+#define STR_CMN_FSTS	"2 - первый ход = %lu спичек (исходно = 2)\n"
+#define STR_CMN_FSTT	"3 - первым начинает = %u (0 - машина, 1 - игрок, исходно = 0)\n"
+#define STR_CMN_DLVL	"4 - значение отладки = %u (0 - выкл., 1..3 - вкл., исходно = 0)\n"
+#define STR_CMN_RSET	"5 - восстановить исходные значения\n"
+#define STR_CMN_CFGI	"Ввод нового значения (0 or exit - для отмены):\n> "
+#define STR_CMN_CFGR	"Все параметры восстановлены до исходных значений\n"
 
-#define STR_DBG_IKEY	"Number of pressed key = %u\n"
-#define STR_DBG_FIBO	"Max matches = %lu, max fibonacci = %lu, fibsz = %lu\n"
-#define STR_DBG_RAND	"Random roll: %lu\n"
-#define STR_DBG_CALC	"Calculated: %lu\n"
-#define STR_DBG_ONCE	"Taking all at once...\n"
-#define STR_DBG_INDX	"Index: %lu, Fibonacci: %lu, remains: %lu, limit: %lu\n"
-#define STR_DBG_UFAV	"Unfavorable outcome: %lu\n"
-#define STR_DBG_STEP	"Favorable outcome found in one step\n"
-#define STR_DBG_RDEP	"Recursion depth = %lu\n"
-#define STR_DBG_FAVR	"Favorable outcome found recursively\n"
-#define STR_DBG_PPRL	"Player %u: matches remain = %lu, limit = %lu\n"
-#define STR_DBG_PDIS	"Player: %u\n"
+#define STR_DBG_IKEY	"Нажата клавиша = %u\n"
+#define STR_DBG_FIBO	"Спичек макс. = %lu, Фибоначчи = %lu, fibsz = %lu\n"
+#define STR_DBG_RAND	"Принято случайное значение: %lu\n"
+#define STR_DBG_CALC	"Расчитано значение: %lu\n"
+#define STR_DBG_ONCE	"Забираю всё разом...\n"
+#define STR_DBG_INDX	"%lu: Фибоначчи: %lu, остаётся: %lu, предел: %lu\n"
+#define STR_DBG_UFAV	"Неблагоприятный исход: %lu\n"
+#define STR_DBG_STEP	"Благоприятный исход найден за один шаг\n"
+#define STR_DBG_RDEP	"Глубина рекурсии = %lu\n"
+#define STR_DBG_FAVR	"Благоприятный исход найден рекурсивно\n"
+#define STR_DBG_PPRL	"Игрок %u: осталось спичек = %lu, предел = %lu\n"
+#define STR_DBG_PDIS	"Игрок: %u\n"
 
 
 volatile unsigned long bm_limit = 0, bm_remain = 0;
@@ -73,7 +73,7 @@ void configure( void );
 
 int main( void ) {
 	unsigned char keypress;
-	/* Main menu */
+	/* Главное меню */
 	do {
 		printf( STR_MMN_TITL );
 		printf( STR_MMN_PVE0 );
@@ -88,7 +88,7 @@ int main( void ) {
 
 		bm_fibsz = 0;
 		do {
-			/* Create dynamic array for Fibonacci numbers */
+			/* Динамический массив для последовательности Фибоначчи */
 			bm_fibtmp = ( unsigned long * ) realloc( bm_fibonacci,
 					( bm_fibsz + 1 ) * sizeof( unsigned long ));
 			if ( bm_fibtmp == NULL) {
@@ -125,7 +125,7 @@ int main( void ) {
 void echo_matches( void ) {
 	unsigned long i = 0;
 	printf( STR_INF_MTCH, bm_remain );
-	/* Error handling condition for unsigned (if any) */
+	/* Обработчик ошибок для беззнакового целого (мало ли что) */
 	if ( bm_remain > bm_max_matches ) {
 		printf( STR_ERR_UNKN );
 		return;
@@ -137,7 +137,7 @@ void echo_matches( void ) {
 }
 
 void echo_player_pickup( unsigned char num ) {
-	/* Individual messages for each player */
+	/* Тескт сообщений для каждого игрока */
 	switch ( num ) {
 	case 0: printf( STR_ACT_PL0T ); break;
 	case 1: printf( STR_ACT_PL1T ); break;
@@ -151,43 +151,43 @@ void echo_player_pickup( unsigned char num ) {
 }
 
 void ai_pickup( void ) {
-	/* This function handles current ai turn */
+	/* Обработка хода для машины */
 	unsigned long bm_ai_take = 0;
 
 	printf( STR_ACT_AITN );
 	if ( bm_limit ) printf( "%lu\n", bm_limit );
 	else printf( STR_INF_ENDL );
 
-	/* Calculate matches to take */
+	/* Расчёт благоприятного исхода */
 	bm_ai_take = ai_decide( bm_remain, bm_limit );
 	if ( bm_ai_take == 0 ) {
-		/* Can't be calculated - unfavorable */
+		/* Неблагоприятный исход - брать случайным образом */
 		srandom( time( NULL ) );
 		bm_ai_take = random() % bm_limit + 1;
 		if ( bm_debug ) printf( STR_DBG_RAND, bm_ai_take );
 	} else if ( bm_debug ) printf( STR_DBG_CALC, bm_ai_take );
 
-	/* Show how much have been taken */
+	/* Показать, сколько было взято спичек */
 	printf( STR_ACT_AIPK, bm_ai_take );
 
-	/* Set global variables */
+	/* Изменение глобальных переменных соответств. ходу */
 	bm_remain -= bm_ai_take;
 	bm_limit = bm_ai_take * 2;
 
 	return;
 }
 
-/* Recursive function of AI choice */
+/* Рекурсивная функция для поиска благоприятного исхода */
 unsigned long ai_decide( unsigned long ai_remain, unsigned long ai_limit ) {
 	unsigned long bm_n = 0, bm_m = 0, bm_fav = 0;
 
-	/* 1. Check possibility to take all at once */
+	/* 1. Если можно взять всё сразу и победить, то взять */
 	if ( ai_remain <= ai_limit ) {
 		if ( bm_debug >= 2 ) printf( STR_DBG_ONCE );
 		return ( ai_remain );
 	}
 
-	/* 2. Look for Fibonacci number less than remains */
+	/* 2. Поиск числа Фибоначчи, меньшего, чем остаток */
 	do bm_n ++;
 	while( bm_fibonacci[bm_n] <= ai_remain &&
 			bm_fibonacci[bm_n + 1] < ai_remain &&
@@ -196,13 +196,13 @@ unsigned long ai_decide( unsigned long ai_remain, unsigned long ai_limit ) {
 		printf( STR_DBG_INDX,
 				bm_n, bm_fibonacci[bm_n], ai_remain, ai_limit );
 
-	/* End up with unfavorable outcome */
+	/* Если остаток - число Фибоначчи, то исход неблагоприятен */
 	if ( ai_remain == bm_fibonacci[bm_n] ) {
 		if ( bm_debug >= 2 ) printf( STR_DBG_UFAV, bm_fibonacci[bm_n] );
 		return ( 0 );
 	}
 
-	/* 3. Try to reach favorable outcome in one step */
+	/* 3. Если можно дать оппоненту число Фибоначчи, то дать */
 	bm_fav = ai_remain - bm_fibonacci[bm_n];
 	bm_m = ( int ) trunc( ( bm_fibonacci[bm_n] / 2 ) - 0.5 );
 	if ( bm_fav <= ai_limit && bm_fav <= bm_m ) {
@@ -210,7 +210,7 @@ unsigned long ai_decide( unsigned long ai_remain, unsigned long ai_limit ) {
 		return ( bm_fav );
 	}
 
-	/* 4. Recursively search for further favorables */
+	/* 4. Рекурсивный поиск хода, ведущего к благоприятному исходу */
 	if ( bm_debug >= 2 ) {
 		bm_recursion ++;
 		printf( STR_DBG_RDEP, bm_recursion );
@@ -230,17 +230,17 @@ unsigned long player_input( void ) {
 	unsigned long bm_input = 0;
 	int bm_i = 0;
 	char *bm_inbuf = ( char * ) malloc( 4 ), *bm_exit = "exit";
-	/* Input error handling and parsing cycle */
+	/* Цикл обработки введённых значений */
 	while ( ( bm_i = scanf( "%lu", &bm_input ) ) < 1 ) {
 		scanf( "%4s", bm_inbuf );
-		/* Exit condition */
+		/* Условие выхода - слово 'exit' */
 		if ( bm_inbuf[0] == bm_exit[0]
 			&& bm_inbuf[1] == bm_exit[1]
 			&& bm_inbuf[2] == bm_exit[2]
 			&& bm_inbuf[3] == bm_exit[3] ) {
 			return ( 0 );
 		}
-		/* Get rid of wrong buffer with warning */
+		/* Очистка буфера ввода и ругательство */
 		scanf( "%*[^\n]" );
 		printf( STR_ERR_INUM );
 	}
@@ -252,7 +252,7 @@ unsigned char player_pickup( unsigned char num ) {
 	do {
 		echo_player_pickup( num );
 		bm_player_take = player_input();
-		/* If player entered '0' or 'exit' - end */
+		/* Если игрок ввёл '0' или 'exit', то выход */
 		if ( ! bm_player_take ) {
 			bm_remain = 0;
 			bm_limit = 1;
@@ -260,13 +260,13 @@ unsigned char player_pickup( unsigned char num ) {
 		}
 	} while ( ( bm_player_take > bm_limit ) && bm_limit );
 
-	/* For case of unlimited (bm_limit == 0) */
+	/* Если можно взять хоть сколько (bm_limit == 0) */
 	bm_remain -= ( ! bm_limit ) ? bm_remain : bm_player_take; 
-	/* Limit = not more than remains */
+	/* Предельно можно взять меньше не больше, чем осталось */
 	bm_limit = ( ( bm_player_take * 2 ) <= bm_remain ) ?
 			( bm_player_take * 2 ) : bm_remain;
 
-	/* Only 3 players allowed: 1 pve + 2 pvp */
+	/* Только 3 типа игроков, иначе ругаться */
 	switch ( num ) {
 	case 1: break;
 	case 2: break;
@@ -284,7 +284,7 @@ void pvp_loop( unsigned char forever ) {
 		bm_player = 1;
 		bm_remain = bm_max_matches;
 		bm_limit = bm_first_step;
-		/* Switch players until remains 0 matches */
+		/* Игроки поочереди берут, пока не останется 0 спичек */
 		while ( bm_remain > 0 ) {
 			echo_matches();
 			if ( ! player_pickup( bm_player ) ) forever = 0;
@@ -302,7 +302,7 @@ void pve_loop( unsigned char forever ) {
 		bm_player = bm_first_turn;
 		bm_remain = bm_max_matches;
 		bm_limit = bm_first_step;
-		/* Switch ai and player until remains 0 */
+		/* Игрок и машина поочереди берут, пока есть спички */
 		while ( bm_remain > 0 ) {
 			echo_matches();
 			if ( bm_debug ) printf( STR_DBG_PDIS, bm_player );
@@ -322,7 +322,7 @@ void pve_loop( unsigned char forever ) {
 }
 
 void configure( void ) {
-	/* Configuration menu */
+	/* Меню настроек */
 	unsigned char bm_keypress;
 	unsigned long bm_value = 0;
 	do {

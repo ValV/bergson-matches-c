@@ -1,8 +1,8 @@
 Bergson-Matches
 ===============
 
-Algorithm for *Bergson Matches* logic game
+Реализация алгоритма для игры *Спички Бергсона*
 
-This is console logic game to wrap the algorithm.
-Algorithm will recursively search for favorable outcome so at big amounts of matches time for ai's decision increase considerably.
-Even it can hung up the machine.
+Простейший консольный вариант, чтобы реализовать алгоритм.
+Алгоритм будет рекрсивно искать благоприятный исход, т.ч. для большого количества спичек это может стать причиной увеличения времени на расчёт хода.
+Не оптимизирован, а, значит, может повесить ЭВМ.
