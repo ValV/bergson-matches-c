@@ -4,8 +4,8 @@
 #include <time.h>
 #include <math.h>
 
-#define	bm_min( arg1, arg2 )	( arg1 < arg2 ) ? arg1 : arg2
-#define	bm_rndcomput( arg1 )	round ( pow( ( 1 + pow( 5, 0.5 ) ) / 2, arg1 ) / pow( 5, 0.5) )
+#define bm_min( arg1, arg2 )	( arg1 < arg2 ) ? arg1 : arg2
+#define bm_rndcomput( arg1 )	round ( pow( ( 1 + pow( 5, 0.5 ) ) / 2, arg1 ) / pow( 5, 0.5) )
 
 /* I18n strings */
 #define STR_ERR_WRPL	"\nError: wrong player in turn!\n"
